@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+        <template id="app_esprotech_custom.replace_login" name="Login Layout" inherit_id="web.login_layout">
+            <xpath expr="//a[@target='_blank']" position="replace">
+                <a href="https://www.esprotech.org" target="_blank">Powered by <span>EsproTech</span></a>
+            </xpath>
+            <xpath expr="//div[@class='text-center small mt-4 pt-3 border-top']" position="before">
+                <t t-set="disable_database_manager" t-value="1"/>
+            </xpath>
+        </template>
+        <template id="app_esprotech_custom.layout" inherit_id="web.layout" name="Cutome Layout">
+           <xpath expr="//title" position="replace">
+               <title>SIGE</title>
+            </xpath>
+            <xpath expr="//link[@type='image/x-icon']" position="replace">
+                <link rel="shortcut icon" href="/web/binary/company_logo" type="image/x-icon"/>
+            </xpath>
+        </template>
+        <template id="app_esprotech_custom.login" inherit_id="auth_signup.login" name="Remove Create Account">
+            <xpath expr="//div[@class='justify-content-between mt-2 d-flex small']" position="replace">
+                <div class="justify-content-between mt-2 d-flex small">
+                    <a t-if="reset_password_enabled" t-attf-href="/web/reset_password?{{ keep_query() }}">¿Desea recuperar su contraseña?</a>
+                </div>
+            </xpath>
+        </template>
+</odoo>
