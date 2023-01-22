@@ -16,6 +16,11 @@
     'data': [
         'views/app_esprotech_custom_views.xml',
     ],
+        'assets': {
+        'web.assets_backend': [
+            'app_esprotech_custom/static/src/js/user_menu.js',
+        ],
+    },
     'appication': True,
     'license': 'LGPL-3',
 }
